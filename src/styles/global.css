@@ -490,8 +490,17 @@ h2 {
 
 #home {
     justify-content: space-evenly;
-    gap: 22px;
-    padding: max(28px, env(safe-area-inset-top)) 24px max(32px, env(safe-area-inset-bottom));
+    gap: clamp(8px, 1.8vh, 22px);
+    padding: max(16px, env(safe-area-inset-top)) 24px max(16px, env(safe-area-inset-bottom));
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#home::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 #home h1 {
@@ -503,24 +512,28 @@ h2 {
     color: inherit;
     display: flex;
     justify-content: center;
-    margin: 8px 0 4px;
+    margin: 0;
+    flex: 0 1 auto;
+    min-height: 0;
 }
 
 #home .logo {
-    width: min(320px, 72vw);
+    width: min(320px, 72vw, 38vh);
     height: auto;
+    max-height: 18vh;
     display: block;
     object-fit: contain;
 }
 
 #home .tag {
-    margin: 4px 0 10px;
+    margin: 0;
     letter-spacing: 0.32em;
 }
 
 #home .row {
     gap: 14px;
     width: min(640px, 100%);
+    flex-shrink: 0;
 }
 
 #home .row:first-of-type {
@@ -528,21 +541,23 @@ h2 {
 }
 
 #home .chip {
-    padding: 12px 20px;
+    padding: clamp(8px, 1.4vh, 12px) 20px;
 }
 
 #home .strip {
-    padding: 14px 24px;
+    padding: clamp(8px, 1.5vh, 14px) 24px;
     width: min(560px, 100%);
+    flex-shrink: 0;
 }
 
 #home .btn.big {
-    margin: 6px 0;
-    padding: 20px 64px;
+    margin: 0;
+    padding: clamp(12px, 2vh, 20px) 64px;
+    flex-shrink: 0;
 }
 
 #home .btn.ghost {
-    padding: 12px 20px;
+    padding: clamp(10px, 1.5vh, 12px) 20px;
 }
 
 .ring {
