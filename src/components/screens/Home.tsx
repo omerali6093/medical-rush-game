@@ -4,6 +4,7 @@ import type { Profile, Screen } from '../../types';
 import { DIFFICULTIES, XP_PER_LEVEL, levelOf } from '../../data/config';
 import Ring from '../ui/Ring';
 import MuteButton from '../ui/MuteButton';
+import ggLogo from "../../../assets/gg-logo.png"
 
 interface Props { go: (s: Screen) => void; profile: Profile; patch: (p: Partial<Profile>) => void }
 export default function Home({ go, profile, patch }: Props) {
@@ -11,7 +12,7 @@ export default function Home({ go, profile, patch }: Props) {
     <Panel id="home">
       <motion.h1 animate={{ y: [0, -6, 0] }} 
       transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}>
-           <img src="../assets/gg-logo.png" alt="GetGoal-Logo" className='logo'/>
+           <img src={ggLogo} alt="GetGoal-Logo" className='logo'/>
       </motion.h1>
       <div className="tag" style={{ color: 'var(--cy)' }}>Race Through the Human Body</div>
       <div className="row push" style={{ alignItems: 'center' }}>
