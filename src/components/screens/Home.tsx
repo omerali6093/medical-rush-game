@@ -9,8 +9,10 @@ interface Props { go: (s: Screen) => void; profile: Profile; patch: (p: Partial<
 export default function Home({ go, profile, patch }: Props) {
   return (
     <Panel id="home">
-      <div className="tag">Medical Endless Runner</div>
-      <motion.h1 animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}>PHARMA<br />RUSH</motion.h1>
+      <motion.h1 animate={{ y: [0, -6, 0] }} 
+      transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}>
+           <img src="../assets/gg-logo.png" alt="GetGoal-Logo" className='logo'/>
+      </motion.h1>
       <div className="tag" style={{ color: 'var(--cy)' }}>Race Through the Human Body</div>
       <div className="row push" style={{ alignItems: 'center' }}>
         <Ring id="hlr" label={String(levelOf(profile.xp))} percent={(profile.xp % XP_PER_LEVEL) / (XP_PER_LEVEL / 100)} />
